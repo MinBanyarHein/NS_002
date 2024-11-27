@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Navbar Design</title>
+    <title>Assignment 02</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container-fluid red-border">
-        <div class="container white-box">
-            <div class="custom-navbar">
-                <nav class="navbar navbar-expand-md navbar-light" style="padding-right: 500px;">
-                    <div class="navbar-nav mx-auto">
-                        <a class="nav-item nav-link active" href="#">Home</a>
-                        <span class="nav-separator"> / </span>
-                        <a class="nav-item nav-link" href="#">About</a>
-                        <span class="nav-separator"> / </span>
-                        <a class="nav-item nav-link" href="#">Services</a>
-                        <span class="nav-separator"> / </span>
-                        <a class="nav-item nav-link" href="#">Blog</a>
-                        <span class="nav-separator"> / </span>
-                        <a class="nav-item nav-link" href="#">Contacts</a>
-                    </div>
-                </nav>
-            </div>
-            <div class="content">
-              
-            </div>
-        </div>
+<body class="container-fluid">
+    <div class="container-sm ">
+        <nav class="nav-fill">
+            <ol class="breadcrumb bg-transparent">
+              <li class="breadcrumb-item active"><a href="#">Home</a></li>
+              <li class="breadcrumb-item "><a href="#">About</a></li>
+              <li class="breadcrumb-item"><a href="#">Services</a></li>
+              <li class="breadcrumb-item"><a href="#">Blog</a></li>
+              <li class="breadcrumb-item"><a href="#">Contacts</a></li>
+            </ol> 
+          </nav>
+          <hr>
     </div>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
+
+            breadcrumbItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    
+                    breadcrumbItems.forEach(breadcrumb => breadcrumb.classList.remove('active'));
+
+                    
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
